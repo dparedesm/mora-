@@ -95,19 +95,21 @@
   <main class="relative z-10 flex-grow flex items-center justify-center px-4 py-6">
     <div class="max-w-xl w-full bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-12 shadow-xl border border-mora-gold/20 text-center transition-all">
       
-      <!-- Logo Container -->
-      <div class="mb-6 inline-block relative">
-        <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-gradient-to-tr from-mora-primary to-mora-gold p-1 shadow-lg mx-auto flex items-center justify-center">
-          <div class="w-full h-full bg-white rounded-full flex items-center justify-center overflow-hidden p-2">
-            <img 
-              src="logo.png" 
-              alt="Mora Essencial" 
-              class="max-w-full max-h-full object-contain"
-              onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'font-bold text-2xl tracking-tighter text-mora-primary\'>MORA<br><span class=\'text-xs tracking-widest text-mora-gold uppercase font-light\'>Essencial</span></span>';"
-            />
-          </div>
-        </div>
-      </div>
+      <!-- Logo con marco difuminado -->
+    <div class="mb-6 inline-block relative">
+    <!-- Capa de difuminado suave de fondo -->
+    <div class="absolute inset-0 bg-white/60 blur-xl rounded-full scale-110"></div>
+    
+    <!-- Imagen del logo -->
+    <div class="relative z-10 p-2">
+      <img 
+        src="./logo.png" 
+        alt="Mora Essencial" 
+        class="w-36 sm:w-44 h-auto object-contain mx-auto"
+        onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'font-bold text-3xl tracking-tighter text-mora-primary\'>MORA<br><span class=\'text-xs tracking-widest text-mora-gold uppercase font-light\'>Essencial</span></span>';"
+      />
+    </div>
+    </div>
 
       <!-- Brand Name & Title -->
       <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-mora-primary mb-2">
