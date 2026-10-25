@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mora Essencial | Joyería Fina & Esencial</title>
+
+  <!-- Google Fonts: Montserrat & Cormorant Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* --- VARIABLES Y PALETA OFICIAL DE MORA ESSENCIAL --- */
+    :root {
+      --primary-color: #7A2234;       /* Tono vino / frambuesa oscuro de la marca */
+      --primary-hover: #5A1725;       /* Variación más oscura para hovers */
+      --accent-color: #C59B27;        /* Dorado fino elegante */
+      --accent-hover: #A6801E;        /* Dorado para estados activos */
+      --bg-light: #FDF4F3;            /* Fondo general rosa pastel suave */
+      --bg-white: #FFFFFF;            /* Blanco puro para tarjetas */
+      --about-bg: #F8E8E6;            /* Fondo rosa suave ligeramente más saturado */
+      --text-muted: #8C4856;          /* Texto secundario armonioso */
+
+      --font-body: 'Montserrat', sans-serif;
+      --font-title: 'Cormorant Garamond', serif;
+
+      --transition-standard: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --shadow-soft: 0 10px 30px rgba(122, 34, 52, 0.08);
+      --shadow-hover: 0 15px 35px rgba(122, 34, 52, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--primary-color);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* --- CABECERA & NAVEGACIÓN --- */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(122, 34, 52, 0.06);
+      transition: var(--transition-standard);
+    }
+
+    /* Banderola con Logo destacado + Nombre */
+    .brand-container {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      text-decoration: none;
+      color: var(--primary-color);
+    }
+
+    .brand-logo-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-logo {
+      height: 85px; /* Tamaño destacado */
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 5px rgba(122, 34, 52, 0.1));
+      transition: transform 0.3s ease;
+    }
+
+    .brand-container:hover .brand-logo {
+      transform: scale(1.05);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-title);
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 1.5px;
+      color: var(--primary-color);
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      font-size: 0.72rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2.2rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--primary-color);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      position: relative;
+      padding: 0.3rem 0;
+      transition: var(--transition-standard);
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--accent-color);
+      transition: var(--transition-standard);
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      color: var(--primary-color);
+      font-size: 1.25rem;
+      cursor: pointer;
+      position: relative;
+      transition: var(--transition-standard);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .icon-btn:hover {
+      background-color: var(--bg-light);
+      color: var(--accent-color);
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      background-color: var(--accent-color);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* --- HERO PORTADA --- */
+    .hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 5%;
+      background: linear-gradient(135deg, rgba(122, 34, 52, 0.45), rgba(122, 34, 52, 0.2)),
+                  url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      text-align: center;
+      color: var(--bg-white);
+    }
+
+    .hero-content {
+      max-width: 750px;
+      background: rgba(122, 34, 52, 0.45);
+      backdrop-filter: blur(10px);
+      padding: 3.5rem 2.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease-out;
+    }
+
+    .hero-subtitle {
+      display: inline-block;
+      font-size: 0.9rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #F8E2A6;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-family: var(--font-title);
+      font-size: 3.8rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+    }
+
+    .hero-description {
+      font-size: 1.05rem;
+      font-weight: 300;
+      margin-bottom: 2.2rem;
+      line-height: 1.8;
+      color: #FFF0F2;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 2.5rem;
+      background-color: var(--accent-color);
+      color: var(--bg-white);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(197, 155, 39, 0.35);
+      transition: var(--transition-standard);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(197, 155, 39, 0.5);
+    }
+
+    /* --- TITULOS DE SECCIÓN --- */
+    .section-header {
+      text-align: center;
+      margin: 5rem 0 3rem 0;
+      padding: 0 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-family: var(--font-title);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent-color);
+      margin: 0.8rem auto 0 auto;
+      border-radius: 2px;
+    }
+
+    /* --- COLECCIONES / CATEGORÍAS --- */
+    .collections {
+      padding: 0 5%;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .category-card {
+      position: relative;
+      height: 420px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition-standard);
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .category-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .category-card:hover .category-img {
+      transform: scale(1.08);
+    }
+
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(122, 34, 52, 0.85) 0%, rgba(122, 34, 52, 0.2) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.5rem;
+      color: var(--bg-white);
+    }
+
+    .category-overlay h3 {
+      font-family: var(--font-title);
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .category-link {
+      color: #F8E2A6;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition-standard);
+    }
+
+    .category-card:hover .category-link {
+      color: var(--bg-white);
+      transform: translateX(5px);
+    }
+
+    /* --- PRODUCTOS DESTACADOS --- */
+    .products {
+      padding: 0 5%;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.2rem;
+    }
+
+    .product-card {
+      background-color: var(--bg-white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition-standard);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(122, 34, 52, 0.05);
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: var(--primary-color);
+      color: var(--bg-white);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .product-img-wrapper {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+      background-color: #FAFAFA;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .product-card:hover .product-img {
+      transform: scale(1.06);
+    }
+
+    .product-info {
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .product-title {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .product-price {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 1.2rem;
+    }
+
+    .btn-actions-group {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: auto;
+    }
+
+    .btn-add-cart {
+      flex: 1;
+      background-color: var(--primary-color);
+      color: var(--bg-white);
+      border: none;
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition-standard);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn-add-cart:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 0.9rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition-standard);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1EBE5D;
+      transform: scale(1.05);
+    }
+
+    /* --- SECCIÓN SOBRE NOSOTROS --- */
+    .about-section {
+      margin-top: 6rem;
+      padding: 6rem 5%;
+      background-color: var(--about-bg);
+      position: relative;
+    }
+
+    .about-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-content h2 {
+      font-family: var(--font-title);
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    .about-content p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--primary-color);
+    }
+
+    .feature-item i {
+      color: var(--accent-color);
+      font-size: 1.2rem;
+    }
+
+    /* --- NOTIFICACIÓN TOAST --- */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--primary-color);
+      color: var(--bg-white);
+      padding: 1rem 1.8rem;
+      border-radius: 8px;
+      box-shadow: var(--shadow-hover);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      z-index: 2000;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: var(--transition-standard);
+      pointer-events: none;
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --- PIE DE PÁGINA (FOOTER) --- */
+    .footer {
+      background-color: var(--primary-color);
+      color: var(--bg-white);
+      padding: 5rem 5% 2rem 5%;
+      margin-top: 2rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-brand .brand-title {
+      color: #fff;
+      font-size: 2rem;
+    }
+
+    .footer-brand .brand-subtitle {
+      color: #F8E2A6;
+    }
+
+    .footer-brand p {
+      color: #F7D0D7;
+      font-size: 0.92rem;
+      margin-top: 1rem;
+      line-height: 1.7;
+    }
+
+    .footer-column h4 {
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      color: #F8E2A6;
+      position: relative;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-column a {
+      color: #F7D0D7;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition-standard);
+    }
+
+    .footer-column a:hover {
+      color: #fff;
+      padding-left: 5px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: var(--transition-standard);
+    }
+
+    .social-btn:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 2rem;
+      font-size: 0.85rem;
+      color: #F7D0D7;
+    }
+
+    /* --- RESPONSIVE / ADAPTABILIDAD MOBILE --- */
+    @media (max-width: 992px) {
+      .about-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 1.2rem 1rem;
+      }
+
+      .brand-logo {
+        height: 70px; /* Tamaño optimizado en móviles */
+      }
+
+      .brand-title {
+        font-size: 1.8rem;
+      }
+
+      .nav ul {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-content {
+        padding: 2rem 1.5rem;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ENCABEZADO Y LOGO DESTACADO -->
+  <header class="header">
+    <a href="#inicio" class="brand-container">
+      <div class="brand-logo-wrapper">
+        <!-- Imagen de Logo oficial subida -->
+        <img src="logo.png" alt="Mora Essencial Logo" class="brand-logo" onerror="this.onerror=null; this.src='https://placehold.co/120x120/7A2234/FFF?text=MORA';">
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">Mora Essencial</span>
+        <span class="brand-subtitle">Joyería Fina</span>
+      </div>
+    </a>
+
+    <!-- Menú de Navegación -->
+    <nav class="nav">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#colecciones">Colecciones</a></li>
+        <li><a href="#destacados">Productos</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Acciones Rápidas -->
+    <div class="nav-actions">
+      <a href="https://wa.me/56912345678" target="_blank" class="icon-btn" aria-label="WhatsApp Directo">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <button class="icon-btn" aria-label="Carrito de compras" onclick="alert('Tu carrito tiene ' + cartCount + ' producto(s).')">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-badge" id="cart-counter">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- SECCIÓN HERO / PORTADA -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <span class="hero-subtitle">Elegancia & Sofisticación</span>
+      <h1 class="hero-title">La belleza de lo esencial</h1>
+      <p class="hero-description">Piezas delicadas y duraderas creadas con amor para resaltar tu brillo natural cada día.</p>
+      <a href="#destacados" class="btn-primary">
+        Ver Colección <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CATEGORÍAS Y COLECCIONES -->
+  <section id="colecciones" class="collections">
+    <div class="section-header">
+      <span class="section-subtitle">Explora por Estilo</span>
+      <h2 class="section-title">Nuestras Categorías</h2>
+    </div>
+
+    <div class="collection-grid">
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" alt="Collares y Cadenas" class="category-img">
+        <div class="category-overlay">
+          <h3>Collares & Cadenas</h3>
+          <a href="#destacados" class="category-link">Ver catálogo <i class="fas fa-chevron-right"></i></a>
+        </div>
+      </div>
+
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80" alt="Anillos Elegantes" class="category-img">
+        <div class="category-overlay">
+          <h3>Anillos Finos</h3>
+          <a href="#destacados" class="category-link">Ver catálogo <i class="fas fa-chevron-right"></i></a>
+        </div>
+      </div>
+
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=800&q=80" alt="Aros y Pendientes" class="category-img">
+        <div class="category-overlay">
+          <h3>Aros & Pendientes</h3>
+          <a href="#destacados" class="category-link">Ver catálogo <i class="fas fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PRODUCTOS DESTACADOS -->
+  <section id="destacados" class="products">
+    <div class="section-header">
+      <span class="section-subtitle">Selección Especial</span>
+      <h2 class="section-title">Joyas Destacadas</h2>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- Producto 1 -->
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <span class="product-badge">Popular</span>
+          <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" alt="Collar Perla Essencial" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Collar Perla Essencial</h3>
+          <p class="product-price">$28.900 CLP</p>
+          <div class="btn-actions-group">
+            <button class="btn-add-cart" onclick="addToCart('Collar Perla Essencial')">
+              <i class="fas fa-cart-plus"></i> Añadir
+            </button>
+            <a href="https://wa.me/56912345678?text=Hola%20Mora%20Essencial,%20me%20interesa%20el%20Collar%20Perla%20Essencial" target="_blank" class="btn-whatsapp" title="Consultar por WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <span class="product-badge">Exclusivo</span>
+          <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80" alt="Anillo Solitario Dorado" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Anillo Solitario Dorado</h3>
+          <p class="product-price">$19.900 CLP</p>
+          <div class="btn-actions-group">
+            <button class="btn-add-cart" onclick="addToCart('Anillo Solitario Dorado')">
+              <i class="fas fa-cart-plus"></i> Añadir
+            </button>
+            <a href="https://wa.me/56912345678?text=Hola%20Mora%20Essencial,%20me%20interesa%20el%20Anillo%20Solitario%20Dorado" target="_blank" class="btn-whatsapp" title="Consultar por WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=600&q=80" alt="Argollas Texturadas" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Argollas Texturadas</h3>
+          <p class="product-price">$15.900 CLP</p>
+          <div class="btn-actions-group">
+            <button class="btn-add-cart" onclick="addToCart('Argollas Texturadas')">
+              <i class="fas fa-cart-plus"></i> Añadir
+            </button>
+            <a href="https://wa.me/56912345678?text=Hola%20Mora%20Essencial,%20me%20interesa%20las%20Argollas%20Texturadas" target="_blank" class="btn-whatsapp" title="Consultar por WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <span class="product-badge">Nuevo</span>
+          <img src="https://images.unsplash.com/photo-1611591475119-21727c6f0e4b?auto=format&fit=crop&w=600&q=80" alt="Pulsera Estella Aros" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Pulsera Dije Estrella</h3>
+          <p class="product-price">$17.900 CLP</p>
+          <div class="btn-actions-group">
+            <button class="btn-add-cart" onclick="addToCart('Pulsera Dije Estrella')">
+              <i class="fas fa-cart-plus"></i> Añadir
+            </button>
+            <a href="https://wa.me/56912345678?text=Hola%20Mora%20Essencial,%20me%20interesa%20la%20Pulsera%20Dije%20Estrella" target="_blank" class="btn-whatsapp" title="Consultar por WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN SOBRE NOSOTROS -->
+  <section id="nosotros" class="about-section">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80" alt="Detalle de Joyas Mora Essencial">
+      </div>
+      <div class="about-content">
+        <h2>Sobre Mora Essencial</h2>
+        <p>En <strong>Mora Essencial</strong> creemos que los accesorios no son solo complementos, sino expresiones de tu esencia. Diseñamos y seleccionamos piezas atemporales que resaltan tu belleza en cada momento especial.</p>
+        <p>Cada una de nuestras joyas está elaborada con acabados finos e insumos de alta calidad para brindarte durabilidad, brillo y confort.</p>
+
+        <div class="about-features">
+          <div class="feature-item">
+            <i class="fas fa-gem"></i> Calidad Garantizada
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-heart"></i> Diseños Atemporales
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-box-open"></i> Empaque Especial
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-truck"></i> Envíos a todo Chile
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTIFICACIÓN DE PRODUCTO AGREGADO -->
+  <div id="toast" class="toast">
+    <i class="fas fa-check-circle" style="color: #25D366; font-size: 1.2rem;"></i>
+    <span id="toast-message">Producto agregado al carrito</span>
+  </div>
+
+  <!-- PIE DE PÁGINA (FOOTER) -->
+  <footer id="contacto" class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="brand-title">Mora Essencial</span><br>
+        <span class="brand-subtitle">Joyería Fina</span>
+        <p>Resaltando tu brillo con elegancia y finura día a día.</p>
+        <div class="social-links">
+          <a href="https://instagram.com/mora.essencial" target="_blank" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/56912345678" target="_blank" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#colecciones">Colecciones</a></li>
+          <li><a href="#destacados">Productos Destacados</a></li>
+          <li><a href="#nosotros">Sobre Nosotros</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Contacto</h4>
+        <ul>
+          <li><i class="fab fa-instagram"></i> @mora.essencial</li>
+          <li><i class="fab fa-whatsapp"></i> +56 9 1234 5678</li>
+          <li><i class="fas fa-envelope"></i> contacto@moraessencial.cl</li>
+          <li><i class="fas fa-map-marker-alt"></i> Chile</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Mora Essencial. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT PARA INTERACTIVIDAD -->
+  <script>
+    let cartCount = 0;
+
+    function addToCart(productName) {
+      cartCount++;
+      document.getElementById('cart-counter').innerText = cartCount;
+
+      // Mostrar Toast Notificación
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toast-message');
+      toastMessage.innerText = `¡"${productName}" agregado al carrito!`;
+      
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

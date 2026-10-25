@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mora Essencial | Próximamente</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mora: {
+              primary: '#7A2234',  /* Vino / Frambuesa */
+              gold: '#C59B27',     /* Dorado acento */
+              goldLight: '#E8C66B',
+              bgLight: '#FDF4F3',  /* Fondo pastel cálido */
+              bgAlt: '#F8E7E5',    /* Fondo secundario */
+              dark: '#2D151B'
+            }
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #FDF4F3;
+      color: #2D151B;
+    }
+    
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #C59B27 0%, #E8C66B 50%, #C59B27 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gold-button {
+      background: linear-gradient(135deg, #C59B27 0%, #D4AC38 100%);
+      transition: all 0.3s ease;
+    }
+
+    .gold-button:hover {
+      background: linear-gradient(135deg, #B38A1F 0%, #C59B27 100%);
+      box-shadow: 0 10px 20px -5px rgba(197, 155, 39, 0.4);
+    }
+
+    .pulse-glow {
+      animation: pulseGlow 2.5s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-mora-gold selection:text-white">
+
+  <!-- Background Subtle Decorative Glows -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-mora-bgAlt filter blur-3xl opacity-70"></div>
+    <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-mora-gold/10 filter blur-3xl opacity-60"></div>
+  </div>
+
+  <!-- Header Subtle Badge -->
+  <header class="relative z-10 pt-8 pb-4 text-center px-4">
+    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase bg-mora-primary/10 text-mora-primary border border-mora-primary/20 backdrop-blur-sm">
+      <i class="fa-solid fa-gem text-mora-gold text-xs">
+      </i> Joyería Fina & Accesorios
+    </span>
+  </header>
+
+  <!-- Main Hero & Contact Section -->
+  <main class="relative z-10 flex-grow flex items-center justify-center px-4 py-6">
+    <div class="max-w-xl w-full bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-12 shadow-xl border border-mora-gold/20 text-center transition-all">
+      
+      <!-- Logo Container -->
+      <div class="mb-6 inline-block relative">
+        <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-gradient-to-tr from-mora-primary to-mora-gold p-1 shadow-lg mx-auto flex items-center justify-center">
+          <div class="w-full h-full bg-white rounded-full flex items-center justify-center overflow-hidden p-2">
+            <img 
+              src="logo.png" 
+              alt="Mora Essencial" 
+              class="max-w-full max-h-full object-contain"
+              onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'font-bold text-2xl tracking-tighter text-mora-primary\'>MORA<br><span class=\'text-xs tracking-widest text-mora-gold uppercase font-light\'>Essencial</span></span>';"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Brand Name & Title -->
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-mora-primary mb-2">
+        Mora Essencial
+      </h1>
+      <p class="text-xs uppercase tracking-[0.3em] font-semibold text-mora-gold mb-6">
+        Próximamente
+      </p>
+
+      <!-- Subtitle Message -->
+      <p class="text-mora-dark/80 text-sm sm:text-base leading-relaxed font-light mb-8 max-w-md mx-auto">
+        Estamos preparando una experiencia única para resaltar tu brillo natural. Muy pronto podrás conocer nuestra colección exclusiva online.
+      </p>
+
+      <!-- Primary Contact Call-To-Actions (WhatsApp & Instagram) -->
+      <div class="space-y-4 mb-10">
+        
+        <!-- WhatsApp Direct Button -->
+        <a 
+          href="https://wa.me/56982023484?text=%C2%A1Hola%20Mora%20Essencial!%20Quisiera%20consultar%20por%20sus%20joyas%20y%20el%20cat%C3%A1logo%20actual." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="pulse-glow flex items-center justify-center gap-3 w-full py-4 px-6 bg-[#25D366] hover:bg-[#20ba5a] text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 group"
+        >
+          <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+          <span class="text-base tracking-wide">Contactar por WhatsApp</span>
+        </a>
+
+        <!-- Instagram Direct Button -->
+        <a 
+          href="https://instagram.com/mora.essencial" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="flex items-center justify-center gap-3 w-full py-4 px-6 bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 hover:opacity-95 text-white font-semibold rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 group"
+        >
+          <i class="fa-brands fa-instagram text-2xl group-hover:scale-110 transition-transform"></i>
+          <span class="text-base tracking-wide">Ver Novedades en Instagram</span>
+        </a>
+
+      </div>
+
+      <!-- Quick Catalog Request / VIP Form -->
+      <div class="pt-6 border-t border-mora-bgAlt">
+        <p class="text-xs font-medium text-mora-dark/70 mb-3">
+          ¿Deseas consultar o recibir nuestro catálogo actual?
+        </p>
+        <form 
+          on送信="event.preventDefault(); window.open('https://wa.me/56982023484?text=' + encodeURIComponent('¡Hola Mora Essencial! Me gustaría recibir información y el catálogo actual. Mi nombre es: ' + document.getElementById('userName').value), '_blank');" 
+          class="flex flex-col sm:flex-row gap-2 max-w-sm mx-auto"
+        >
+          <input 
+            type="text" 
+            id="userName"
+            placeholder="Tu nombre..." 
+            required
+            class="flex-1 px-4 py-2.5 rounded-xl border border-mora-gold/30 bg-mora-bgLight/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-mora-gold text-sm text-mora-dark placeholder-mora-dark/40"
+          >
+          <button 
+            type="submit"
+            class="gold-button text-white font-medium px-5 py-2.5 rounded-xl text-sm whitespace-nowrap shadow-sm hover:shadow"
+          >
+            Pedir Catálogo
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 py-6 text-center text-xs text-mora-dark/60">
+    <p>© 2026 Mora Essencial. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
