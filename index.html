@@ -77,6 +77,45 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-mora-gold selection:text-white">
 
+<!-- Header Section with Official Header Logo -->
+  <header class="sticky top-0 z-40 bg-white/70 backdrop-blur-md border-b border-mora-primary/10 py-3 px-4 shadow-sm">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      
+      <!-- Logo Container -->
+      <a href="#" class="flex items-center gap-3 group">
+        <img 
+          src="./logo.png" 
+          alt="Mora Essencial" 
+          class="h-12 sm:h-16 w-auto object-contain transition-transform group-hover:scale-105"
+          onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'font-serif-title font-bold text-2xl tracking-wide text-mora-primary\'>MORA ESSENCIAL</span>';"
+        />
+      </a>
+
+      <!-- Quick Social Icons -->
+      <div class="flex items-center gap-3 sm:gap-4 text-mora-primary">
+        <a 
+          href="https://instagram.com/mora.essencial" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-9 h-9 rounded-full bg-mora-primary/10 hover:bg-mora-primary hover:text-white flex items-center justify-center transition-all"
+          title="Instagram"
+        >
+          <i class="fa-brands fa-instagram text-lg"></i>
+        </a>
+        <a 
+          href="https://wa.me/56912345678" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-9 h-9 rounded-full bg-[#25D366]/10 hover:bg-[#25D366] hover:text-white text-[#25D366] flex items-center justify-center transition-all"
+          title="WhatsApp"
+        >
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
   <!-- Background Subtle Decorative Glows -->
   <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
     <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-mora-bgAlt filter blur-3xl opacity-70"></div>
@@ -87,7 +126,7 @@
   <header class="relative z-10 pt-8 pb-4 text-center px-4">
     <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase bg-mora-primary/10 text-mora-primary border border-mora-primary/20 backdrop-blur-sm">
       <i class="fa-solid fa-gem text-mora-gold text-xs">
-      </i> Joyería Fina & Accesorios
+      </i> Joyas & Accesorios
     </span>
   </header>
 
@@ -95,22 +134,6 @@
   <main class="relative z-10 flex-grow flex items-center justify-center px-4 py-6">
     <div class="max-w-xl w-full bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-12 shadow-xl border border-mora-gold/20 text-center transition-all">
       
-      <!-- Logo con marco difuminado -->
-    <div class="mb-6 inline-block relative">
-    <!-- Capa de difuminado suave de fondo -->
-    <div class="absolute inset-0 bg-white/60 blur-xl rounded-full scale-110"></div>
-    
-    <!-- Imagen del logo -->
-    <div class="relative z-10 p-2">
-      <img 
-        src="./logo.png" 
-        alt="Mora Essencial" 
-        class="w-36 sm:w-44 h-auto object-contain mx-auto"
-        onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'font-bold text-3xl tracking-tighter text-mora-primary\'>MORA<br><span class=\'text-xs tracking-widest text-mora-gold uppercase font-light\'>Essencial</span></span>';"
-      />
-    </div>
-    </div>
-
       <!-- Brand Name & Title -->
       <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-mora-primary mb-2">
         Mora Essencial
@@ -119,10 +142,50 @@
         Próximamente
       </p>
 
+
+      <!-- Logo con marco difuminado -->
+    <div class="mb-6 inline-block relative">
+    <!-- Capa de difuminado suave de fondo -->
+    <div class="absolute inset-0 bg-white/60 blur-xl rounded-full scale-110"></div>
+    
+    <!-- Imagen del logo 
+    <div class="relative z-10 w-full max-w-lg mx-auto p-2">
+      <img 
+        src="./Main.jpeg" 
+        alt="Mora Essencial" 
+        class="w-36 sm:w-44 h-auto object-contain mx-auto"
+        onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'font-bold text-3xl tracking-tighter text-mora-primary\'>MORA<br><span class=\'text-xs tracking-widest text-mora-gold uppercase font-light\'>Essencial</span></span>';"
+      />
+    </div> -->
+    
+      
+    <!-- Sección Hero / Imagen Principal -->
+    <div class="relative z-10 w-full max-w-lg mx-auto p-2">
+    <div class="relative group">
+    <!-- Resplandor/Sombra suave de fondo
+    <div class="absolute -inset-1 bg-gradient-to-r from-mora-gold via-mora-primary to-mora-gold rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+     -->
+    <!-- Contenedor principal de la imagen -->
+    <div class="relative bg-white p-2 sm:p-3 rounded-2xl shadow-2xl">
+      <img 
+        src="./Main.jpeg" 
+        alt="Mora Essencial - Joyas y Accesorios" 
+        class="w-full h-auto max-h-[500px] object-cover rounded-xl shadow-inner mx-auto transition-transform duration-500 hover:scale-[1.01]"
+        onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'font-bold text-3xl tracking-tighter text-mora-primary p-8 block text-center\'>MORA<br><span class=\'text-xs tracking-widest text-mora-gold uppercase font-light\'>Essencial</span></span>';"
+      />
+    </div>
+  </div>
+</div>
+
+
+    </div>
+
+      
+
       <!-- Subtitle Message -->
       <p class="text-mora-dark/80 text-sm sm:text-base leading-relaxed font-light mb-8 max-w-md mx-auto">
-        Estamos preparando una experiencia única para resaltar tu brillo natural. Muy pronto podrás conocer nuestra colección exclusiva online.
-      </p>
+        Página en construcción 🛠️. 
+        Nos estamos tomando el tiempo necesario para armar un espacio hermoso, donde muy pronto podrás encontrar todos nuestros accesorios delicados y detalles creados especialmente para ti.</p>
 
       <!-- Primary Contact Call-To-Actions (WhatsApp & Instagram) -->
       <div class="space-y-4 mb-10">
@@ -151,7 +214,7 @@
 
       </div>
 
-      <!-- Quick Catalog Request / VIP Form -->
+      <!-- Quick Catalog Request / VIP Form 
       <div class="pt-6 border-t border-mora-bgAlt">
         <p class="text-xs font-medium text-mora-dark/70 mb-3">
           ¿Deseas consultar o recibir nuestro catálogo actual?
@@ -174,7 +237,7 @@
             Pedir Catálogo
           </button>
         </form>
-      </div>
+      </div>-->
 
     </div>
   </main>
